@@ -1,0 +1,14 @@
+[Unit]
+Description=MLB Value Bot
+After=network.target
+
+[Service]
+User=YOUR_USER
+WorkingDirectory=/home/YOUR_USER/mlb-telegram-bot
+EnvironmentFile=/home/YOUR_USER/mlb-telegram-bot/.env
+ExecStart=/home/YOUR_USER/mlb-telegram-bot/.venv/bin/python -m app.main
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
